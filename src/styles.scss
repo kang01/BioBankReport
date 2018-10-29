@@ -29,3 +29,21 @@ body {
 .report-view .carousel {
     outline: none;
 }
+
+.report-view .carousel-item {
+    /* Force to always be block */
+    display: block !important;
+    z-index: 1;
+    position: absolute;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.2s;
+    visibility: hidden;
+}
+
+.report-view .carousel-item.active {
+    position: relative;
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}

@@ -4,14 +4,15 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-echarts',
   templateUrl: './echarts.component.html',
-  styleUrls: ['./echarts.component.scss']
+  styleUrls: ['./echarts.component.scss'],
+  providers: [NgbCarouselConfig]
 })
 export class EchartsComponent implements OnInit {
   constructor(config: NgbCarouselConfig) {
-    config.interval = 30000;
-  //   setTimeout(() => {
-  //     this.showloading = false;
-  //   }, 300);
+    // config.interval = 5000;
+    setTimeout(() => {
+      config.interval = 5000;
+    }, 300);
   }
   // showloading = true;
 
