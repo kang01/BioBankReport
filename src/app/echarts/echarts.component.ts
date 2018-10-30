@@ -11,7 +11,7 @@ export class EchartsComponent implements OnInit {
   constructor(config: NgbCarouselConfig) {
     // config.interval = 5000;
     setTimeout(() => {
-      config.interval = 5000;
+      config.interval = 3000;
     }, 300);
   }
   // showloading = true;
@@ -27,33 +27,40 @@ export class EchartsComponent implements OnInit {
        {name: '青岛', value: [120.33, 36.07, 4822023]},
        {name: '金昌', value: [102.188043, 38.520089, 632323]}
    ];
+  datamapvalue1 = [
+       {name: '山东', value: 4822023},
+       {name: '河北', value: 500000},
+       {name: '湖北', value: 38000000},
+       {name: '浙江', value: 1}
+   ];
   // 地图
   // tslint:disable-next-line:member-ordering
   mapoption = {
     backgroundColor: '',
-    title: {
-      text: '全国主要城市样本量',
-      subtext: '',
-      sublink: 'http://www.pm25.in',
-      left: 'center',
-      textStyle: {
-        color: '#fff'
-      }
+    // title: {
+      // text: '全国主要城市样本量',
+      // subtext: '',
+      // sublink: '',
+      // left: 'center',
+      // textStyle: {
+      //   color: '#fff'
+      // }
+    // },
+    visualMap: {
+      left: 'right',
+      min: 500000,
+      max: 38000000,
+      inRange: {
+          color: ['#EEB8AE', '#ff7963', '#262b3f', '#285692', '#b43129', '#a50026']
+          // color: ['rgba(255,255,255,.3)', 'rgba(255,255,255,.4)', 'rgba(255,255,255.5)']
+      },
+      text: ['High', 'Low'],           // 文本，默认为数值文本
+      calculable: true,
+      // textStyle: {
+      //   color: '#04085E'
+      // },
+      show: false
     },
-  //   visualMap: {
-  //     left: 'right',
-  //     min: 500000,
-  //     max: 38000000,
-  //     inRange: {
-  //         color: ['#EEB8AE', '#ff7963', '#262b3f', '#285692', '#b43129', '#a50026']
-  //     },
-  //     text: ['High', 'Low'],           // 文本，默认为数值文本
-  //     calculable: true,
-  //     textStyle: {
-  //       color: '#fff'
-  //     },
-  //     show: false
-  // },
     tooltip: {
       trigger: 'item'
     },
@@ -66,80 +73,79 @@ export class EchartsComponent implements OnInit {
     //     color: '#fff'
     //   }
     // },
-    geo: {
-      map: 'china',
-      label: {
-        emphasis: {
-          show: false
-        }
-      },
-      zoom: 1.2,
-      roam: true,
-      itemStyle: {
-        normal: {
-          // #323c48 0B13E8 04085E
-          areaColor: '#04085E',
-          borderColor: '#50C2FF'
-        },
-        emphasis: {
-          areaColor: '#2a333d'
-        }
-      }
-    },
+    // geo: {
+    //   map: 'china',
+    //   label: {
+    //     emphasis: {
+    //       show: false
+    //     }
+    //   },
+    //   zoom: 1.2,
+    //   roam: true,
+    //   itemStyle: {
+    //     normal: {
+    //       // #323c48 0B13E8 04085E
+    //       areaColor: '#1A2A3F',
+    //       borderColor: '#50C2FF'
+    //     },
+    //     emphasis: {
+    //       // #2a333d
+    //       areaColor: '#F4E925'
+    //     }
+    //   }
+    // },
     series: [
       {
-        name: 'pm2.5',
+        name: '样本量',
         type: 'map',
-        coordinateSystem: 'geo',
-        data: this.datamapvalue,
-        // symbolSize: function (val) {
-        //   return val[2] / 10;
-        // },
-        label: {
-          normal: {
-            formatter: '{b}',
-            position: 'right',
-            show: false
-          },
-          emphasis: {
-            show: true
-          }
-        },
-        itemStyle: {
-          normal: {
-            color: '#ddb926'
-          }
-        }
-      },
-      {
-        name: 'Top 5',
-        type: 'effectScatter',
-        coordinateSystem: 'geo',
-        data: this.datamapvalue,
-        // symbolSize: function (val) {
-        //   return val[2] / 10;
-        // },
-        showEffectOn: 'render',
-        rippleEffect: {
-          brushType: 'stroke'
-        },
+        mapType: 'china',
+        zoom: 1.2,
+        roam: true,
         hoverAnimation: true,
-        label: {
-          normal: {
-            formatter: '{b}',
-            position: 'right',
-            show: true
-          }
-        },
+        // coordinateSystem: 'geo',
+        data: this.datamapvalue1,
+        // symbolSize: function (val) {
+        //   return val[2] / 10;
+        // },
         itemStyle: {
-          normal: {
-            color: '#f4e925',
-            shadowBlur: 10,
-            shadowColor: '#333'
-          }
-        },
-        zlevel: 1
-      }
+              normal: {
+                // #323c48 04085E 1A2A3F
+                areaColor: '#04085E',
+                borderColor: '#50C2FF'
+              }
+        }
+
+      },
+      // {
+      //   name: 'Top 5',
+      //   type: 'effectScatter',
+      //   coordinateSystem: 'geo',
+      //   data: this.datamapvalue,
+      //   // symbolSize: function (val) {
+      //   //   return val[2] / 10;
+      //   // },
+      //   showEffectOn: 'render',
+      //   rippleEffect: {
+      //     brushType: 'stroke'
+      //   },
+      //   hoverAnimation: true,
+      //   label: {
+      //     normal: {
+      //       formatter: '{b}',
+      //       position: 'right',
+      //       show: true
+      //     }
+      //   },
+      //   itemStyle: {
+      //     normal: {
+      //       color: '#f4e925',
+      //       shadowBlur: 10,
+      //       shadowColor: '#333'
+      //     }
+      //   },
+      //   zlevel: 1
+      // }
+
     ]
   };
   // 年龄性别样本量
@@ -705,7 +711,7 @@ temperatureoption = {
 
   tooltip : {
       trigger: 'item',
-      formatter: "{a} <br/>{b} : {c} ({d}%)"
+      formatter: '{a} <br/>{b} : {c} ({d}%)'
   },
 
   visualMap: {

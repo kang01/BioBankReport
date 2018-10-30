@@ -24,6 +24,27 @@
 
 .report-view {}
 
+.report-view .report-title h4 {
+    // font-size: 40px;
+    font-family: 'reporttitlefont';
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    // font-size: 2.5em;
+    color: #228DFF;
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
+    //     background-image: url('../../assets/images/title_02.png');
+    //     background-repeat: no-repeat;
+    //     background-size: 100% 100%;
+}
+
+// .report-view .report-title h4:hover {
+//     -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+//     -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+//     animation: neon2 1.5s ease-in-out infinite alternate;
+// }
 .report-box {
     height: 100%;
     border-bottom: 1px solid #fff;
@@ -33,4 +54,18 @@
 
 .chart-box {
     height: 100%;
+}
+
+@font-face {
+    font-family: 'reporttitlefont';
+    src: url('../../assets/font/NeverSurrender.ttf');
+}
+
+@-webkit-keyframes neon2 {
+    from {
+        text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #228DFF, 0 0 50px #228DFF, 0 0 60px #228DFF, 0 0 50px #228DFF, 0 0 100px #228DFF;
+    }
+    to {
+        text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #228DFF, 0 0 15px #228DFF, 0 0 20px #228DFF, 0 0 25px #228DFF, 0 0 75px #228DFF;
+    }
 }
