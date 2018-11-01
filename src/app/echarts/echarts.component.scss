@@ -2,12 +2,16 @@
     height: 100%;
 }
 
-.height94 {
-    height: 94%;
+.height92 {
+    height: 92%;
 }
 
-.height29 {
-    height: 29%;
+.height47 {
+    height: 47%;
+}
+
+.height30 {
+    height: 30%;
 }
 
 .p-10 {
@@ -18,7 +22,7 @@
     padding-left: 10px;
 }
 
-.mt-40 {
+.mt-30 {
     margin-top: 30px;
 }
 
@@ -38,6 +42,10 @@
     //     background-image: url('../../assets/images/title_02.png');
     //     background-repeat: no-repeat;
     //     background-size: 100% 100%;
+}
+
+.report-view .report-title h4 .chinese-name {
+    font-weight: 900
 }
 
 // .report-view .report-title h4:hover {

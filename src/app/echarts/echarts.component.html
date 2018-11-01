@@ -1,34 +1,47 @@
 <div class="container-fluid height100">
     <div class="report-view height100">
         <div class="report-title">
-            <h4 class="text-center p-10">NCBBC 数据可视化</h4>
+            <h4 class="text-center p-10">
+                <span>NCBBC </span>
+                <span class="chinese-name">数据可视化</span>
+            </h4>
         </div>
-        <ngb-carousel class="height94">
+        <ngb-carousel class="report-carousel height92">
             <ng-template ngbSlide>
-                <div class="row height100">
-                    <div class="col-md-9 height100">
-                        <div class="row" style="height:61%">
-                            <div class="col-md-4 height100">
-                                <div class="height100">
-                                    <div class="report-box">
-                                        <div echarts [options]="ageSexSampleoption" class="chart-box"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="height100">
-                                    <div class="report-box">
-                                        <div echarts [options]="mapoption" class="chart-box"></div>
-                                    </div>
-                                </div>
+                <div class="row" style="height:64%">
+                    <div class="col-md-3">
+                        <div class="report-box">
+                            <div echarts [options]="ageSexSampleoption" class="chart-box"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="report-box">
+                            <div echarts [options]="mapoption" class="chart-box"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="height47">
+                            <div class="report-box">
+                                <div echarts [options]="illnessoption" class="chart-box"></div>
                             </div>
                         </div>
-                        <div class="row mt-40" style="height:29%">
+                        <div class="height47" style="margin-top: 8.5%;">
+                            <div class="report-box">
+                                <div echarts [options]="illnessoption" class="chart-box"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row mt-30 height30">
+                    <div class="col-md-9">
+                        <div class="row height100">
                             <div class="col-md-6">
                                 <div class="report-box">
                                     <div echarts [options]="stockoutoption" class="chart-box"></div>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="report-box">
                                     <div echarts [options]="storageoption" class="chart-box"></div>
@@ -36,21 +49,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 height100">
-                        <div class="height29">
-                            <div class="report-box">
-                                <div echarts [options]="illnessoption" class="chart-box"></div>
-                            </div>
-                        </div>
-                        <div class="height29 mt-40">
-                            <div class="report-box">
-                                <div echarts [options]="typeoption" class="chart-box"></div>
-                            </div>
-                        </div>
-                        <div class="height29 mt-40">
-                            <div class="report-box">
-                                <div echarts [options]="projectoption" class="chart-box"></div>
-                            </div>
+
+                    <div class="col-md-3">
+                        <div class="report-box">
+                            <div echarts [options]="projectoption" class="chart-box"></div>
                         </div>
                     </div>
                 </div>
@@ -58,17 +60,17 @@
             <ng-template ngbSlide>
                 <div class="row height100">
                     <div class="col-md-6 height100">
-                        <div class="height29">
+                        <div class="height30">
                             <div class="report-box">
                                 <div echarts [options]="electricityoption" class="chart-box"></div>
                             </div>
                         </div>
-                        <div class="height29 mt-40">
+                        <div class="height30 mt-30">
                             <div class="report-box">
                                 <div echarts [options]="lnoption" class="chart-box"></div>
                             </div>
                         </div>
-                        <div class="height29 mt-40">
+                        <div class="height30 mt-30">
                             <div class="row height100">
                                 <div class="col-md-6 height100">
                                     <div class="report-box">
@@ -84,17 +86,17 @@
                         </div>
                     </div>
                     <div class="col-md-6 height100">
-                        <div class="height29">
+                        <div class="height30">
                             <div class="report-box">
                                 <div echarts [options]="alarmoption" class="chart-box"></div>
                             </div>
                         </div>
-                        <div class="height29 mt-40">
+                        <div class="height30 mt-30">
                             <div class="report-box">
                                 <div echarts [options]="alarmTimeoption" class="chart-box"></div>
                             </div>
                         </div>
-                        <div class="height29 mt-40">
+                        <div class="height30 mt-30">
                             <div class="report-box">
                                 <div echarts [options]="alarmprocessoption" class="chart-box"></div>
                             </div>

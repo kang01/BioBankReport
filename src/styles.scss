@@ -10,10 +10,11 @@ body {
 }
 
 body {
-    background-image: url('../src//assets/images/test1.jpg');
+    // background-image: url('../src//assets/images/test1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: white;
+    background-color: #000;
 }
 
 .report-view .carousel-control-prev,
@@ -46,4 +47,8 @@ body {
     transform: translateX(0);
     visibility: visible;
     opacity: 1;
+}
+
+.report-view .carousel-indicators {
+    margin: 0;
 }

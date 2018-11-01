@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-echarts',
@@ -8,14 +9,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig]
 })
 export class EchartsComponent implements OnInit {
-  constructor(config: NgbCarouselConfig) {
-    // config.interval = 5000;
-    setTimeout(() => {
-      config.interval = 3000;
-    }, 300);
-  }
-  // showloading = true;
-
+  constructor(private config: NgbCarouselConfig) {}
   // tslint:disable-next-line:member-ordering
   datamapvalue = [
        {name: '海门', value: [121.15, 31.89, 4822023]},
@@ -27,6 +21,7 @@ export class EchartsComponent implements OnInit {
        {name: '青岛', value: [120.33, 36.07, 4822023]},
        {name: '金昌', value: [102.188043, 38.520089, 632323]}
    ];
+  // tslint:disable-next-line:member-ordering
   datamapvalue1 = [
        {name: '山东', value: 4822023},
        {name: '河北', value: 500000},
@@ -149,6 +144,7 @@ export class EchartsComponent implements OnInit {
     ]
   };
   // 年龄性别样本量
+  // tslint:disable-next-line:member-ordering
   ageSexSampleoption = {
     textStyle: {
       color: '#fff'
@@ -235,6 +231,7 @@ export class EchartsComponent implements OnInit {
     ]
   };
   // 疾病分布
+  // tslint:disable-next-line:member-ordering
   illnessoption = {
     title : {
       text: '疾病分布',
@@ -818,9 +815,23 @@ equimentoption = {
       },
   }
 };
+ngOnInit() {
+  this.changeContentHeight();
+  setTimeout(() => {
+    this.config.interval = 3000;
+  }, 300);
+}
 
-  ngOnInit() {
-  }
+// 调整可视化的内容高度
+changeContentHeight() {
+  const s = document.querySelector('.report-carousel');
+  s['style'].height = (window.innerHeight - 60) + 'px';
+
+  window.addEventListener('resize', () => {
+      s['style'].height = (window.innerHeight - 60) + 'px';
+  });
+}
+
 
 
 }
